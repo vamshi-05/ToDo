@@ -1,0 +1,202 @@
+
+.ultraregister *{
+    font-family: 'Times New Roman';
+    text-decoration: none;
+}
+
+.ultraregister .box{
+    margin: 2rem;
+    background-color: white;
+    text-align: center;
+    width: 50%;
+    font-family: 'Times New Roman', Times, serif;
+ 
+}
+.ultraregister .box h1{
+    margin-bottom: 3rem;
+    
+ 
+}
+
+.ultraregister .con1{
+    text-align: left;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+.ultraregister .con2{
+   font-size: 20px;
+}
+.ultraregister .con3{
+    font-size: 20px;
+    margin-bottom: 1rem;
+    margin-left: 2rem;
+}
+.ultraregister input[type="text"],
+.ultraregister input[type="email"],
+.ultraregister input[type="password"]
+
+{
+    width: 70%;
+    height: 25px;
+    overflow: hidden;
+   
+    border: none;
+    border-bottom: solid #ccc 2px;
+
+}
+.ultraregister #gender{
+
+   
+    font-size: 20px;
+    margin-left: 2rem;
+
+}
+.ultraregister .gender{
+    margin-left: 2rem;
+}
+.ultraregister input[type="radio"]{
+
+
+  margin-left: 3rem;
+    padding-left: 50px;
+    text-align: left;
+
+}
+.ultraregister .con4{
+    font-size: 20px;
+}
+.ultraregister .Terms{
+    text-decoration: none;
+}
+.ultraregister button{
+   
+    padding: 10px;
+    
+    cursor: pointer;
+    color: white;
+    background-color:rgb(0, 123, 255) ;
+    border: none;
+    border-radius: 10px;
+    font-size:20px;
+    font-family:'Times New Roman', Times, serif;
+
+}
+
+
+.ultraregister .massregister{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    box-shadow: 3px 12px 15px 20px grey;
+   margin: 2rem;
+   font-family: 'Times New Roman', Times, serif;
+   
+  
+  
+}
+.ultraregister .proregister{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+.ultraregister .gender{
+    display: flex;
+    flex-direction: row;
+}
+.ultraregister .cls{
+    width: 50%;
+    border-radius: 50%;
+    margin: 1rem;
+}
+.ultraregister .signin{
+    margin-bottom: 2rem;
+}
+.ultraregister .design{
+   width: 55%;
+    color: white;
+    background-color:rgb(0, 123, 255) ;
+    text-align: center;
+    align-items: center;   
+    height: 30rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Times New Roman', Times, serif;
+}
+.ultraregister .btn1:hover{
+ 
+    box-shadow: 3px 1px 3px 1px silver;
+    width: 10rem;
+}
+@media screen and (max-width:1030px) and (min-width:950){
+    .ultraregister .box{
+        width: 50%;
+        overflow: hidden;
+    }
+
+    
+     .ultraregister input[type=text],
+     .ultraregister input[type=email]
+     {
+        width: 50px;
+        overflow: hidden;
+     }
+}
+@media screen and (max-width:950px) {
+    .ultraregister .massregister{
+        display: flex;
+        flex-direction: column;
+
+    }
+    .ultraregister .box{
+        width: 100%;
+    }
+    .ultraregister .design{
+        width: 100%;
+        height: 500px;
+
+    }
+   
+    
+}
+@media screen and (max-width:786) and (min-width:650px){
+    .ultraregister .box{
+        width: 100%;
+    }
+    .ultraregister .design{
+        width: 100%;
+    }
+}
+@media screen and (max-width:600px) {
+    .ultraregister .massregister{
+        box-shadow: 0px 0px 0px 0px ;
+    }
+    .ultraregister .design{
+        height: 500px;
+    }
+    .ultraregister .box{
+        width:100%;
+    }
+    .ultraregister .con1{
+        display: flex;
+        flex-wrap: wrap;
+    }
+    .ultraregister input[type="radio"]{
+
+
+        margin-left: 5rem;
+          padding-left: 500px;
+         
+      
+      }
+      
+      .ultraregister input[type="text"],
+.ultraregister input[type="email"]
+
+{
+    width: 90%;
+}
+}

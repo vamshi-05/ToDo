@@ -1,0 +1,275 @@
+/* General Styles */
+.userhome body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.userhome .task-manager-container {
+  padding: 20px;
+  max-width: 900px;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Header */
+.userhome h1 {
+  text-align: center;
+  color: #2c3e50;
+}
+
+/* Button Styles */
+.userhome .open-modal-btn {
+  background-color: #2980b9;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+}
+
+.userhome .open-modal-btn:hover {
+  background-color: #2980b9;
+}
+
+/* Task Form */
+.userhome .task-form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.userhome .task-form input,
+.userhome .task-form textarea,
+.userhome .task-form select {
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.userhome .task-form input:focus,
+.userhome .task-form textarea:focus,
+.userhome .task-form select:focus {
+  border-color: #3498db;
+}
+
+/* Modal Styles */
+.userhome .modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.userhome .modal-content-new {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  width: 400px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.userhome .modal-actions {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.userhome .modal-actions button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.userhome .modal-actions button:last-child {
+  background-color: #27ae60;
+  color: white;
+}
+
+.userhome .modal-actions button:first-child {
+  background-color: #c0392b;
+  color: white;
+}
+
+/* Task List Styles */
+.userhome .tasks {
+  margin-top: 20px;
+}
+
+.userhome .task {
+  background-color: #ecf0f1;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin-bottom: 15px;
+  transition: transform 0.2s;
+}
+
+.userhome .task:hover {
+  transform: scale(1.02);
+}
+
+/* Task Item Styles */
+.userhome .task h3 {
+  margin: 0;
+  font-size: 20px;
+  color: #34495e;
+}
+
+.userhome .task p {
+  margin: 5px 0;
+  color: #7f8c8d;
+}
+
+/* Task Actions */
+.userhome .task-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.userhome .task-actions button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.userhome .task-actions button:first-child {
+  background-color: #dcdc48;
+  color: white;
+}
+
+.userhome .task-actions button:first-child:hover {
+  background-color: #b9b24b;
+}
+
+.userhome .task-actions button:nth-child(2) {
+  background-color: #e67e22;
+  color: white;
+}
+
+.userhome .task-actions button:nth-child(2):hover {
+  background-color: #d35400;
+}
+
+.userhome .task-actions button:nth-child(3) {
+  background-color: #27ae60;
+  color: white;
+}
+
+.userhome .task-actions button:nth-child(3):hover {
+  background-color: #2ecc71;
+}
+
+.userhome .task-actions button:last-child {
+  background-color: #c0392b;
+  color: white;
+}
+
+.userhome .task-actions button:last-child:hover {
+  background-color: #e74c3c;
+}
+
+.userhome .task-actions button:last-child:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+
+/* Pagination Styles */
+.userhome .pagination {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 20px;
+}
+
+.userhome .pagination button {
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #3498db;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.userhome .pagination button:hover {
+  background-color: #2980b9;
+}
+
+.userhome .pagination button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Class: search-filters-container */
+.userhome .search-filters-container {
+  display: flex;
+  flex-direction: row;
+  gap: 16px; /* Space between search bar and filters */
+  margin-bottom: 24px; /* Space below the filters */
+}
+
+/* Class: filters */
+.userhome .search-filters-container .filters {
+  display: flex;
+  gap: 16px; /* Space between filters */
+}
+
+/* Class: input[type="text"] */
+.userhome .search-filters-container input[type="text"] {
+  padding: 10px;
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 4px; /* Rounded corners */
+  font-size: 16px; /* Font size */
+  transition: border-color 0.3s; /* Smooth transition for border color */
+}
+
+.userhome .search-filters-container input[type="text"]:focus {
+  border-color: #007BFF; /* Blue border on focus */
+  outline: none; /* Remove default outline */
+}
+
+/* Class: select */
+.userhome .search-filters-container select {
+  padding: 10px;
+  border: 1px solid #ccc; /* Light gray border */
+  border-radius: 4px; /* Rounded corners */
+  font-size: 16px; /* Font size */
+  transition: border-color 0.3s; /* Smooth transition for border color */
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.userhome .search-filters-container select:hover {
+  border-color: #007BFF; /* Change border color on hover */
+}
+
+.userhome .search-filters-container select:focus {
+  border-color: #007BFF; /* Blue border on focus */
+  outline: none; /* Remove default outline */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+  .userhome .search-filters-container .filters {
+      flex-direction: column; /* Stack filters vertically on small screens */
+  }
+
+  .userhome .search-filters-container select {
+      width: 100%; /* Full width for select dropdowns */
+  }
+}

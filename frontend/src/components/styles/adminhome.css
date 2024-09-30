@@ -1,0 +1,125 @@
+.adminhome .admin-task-manager-container {
+    padding: 20px;
+  }
+  
+  .adminhome .search-filters-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .adminhome h1 {
+    text-align: center;
+    color: #2c3e50;
+  }
+  
+
+  .adminhome .filters select {
+    margin-left: 10px;
+  }
+  
+  .adminhome .task-table table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  
+  .adminhome .task-table th,
+  .adminhome .task-table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+    text-align: left;
+  }
+  
+  .adminhome .pagination button {
+    padding: 5px 10px;
+    margin: 0 2px;
+  }
+  
+  .adminhome .pagination .active {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  .adminhome .open-modal-btn {
+    background-color: #2980b9;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  .adminhome .open-modal-btn:hover {
+    background-color: #2980b9;
+  }
+  
+  /* Task Form */
+  .adminhome .task-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .adminhome .task-form input,
+  .adminhome .task-form textarea,
+  .adminhome .task-form select {
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+    transition: border-color 0.3s ease;
+  }
+  
+  .adminhome .task-form input:focus,
+  .adminhome .task-form textarea:focus,
+  .adminhome .task-form select:focus {
+    border-color: #3498db;
+  }
+  
+  /* Modal Styles */
+  .adminhome .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .adminhome .modal-content-new {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 400px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  .adminhome .modal-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+  }
+  
+  .adminhome .modal-actions button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .adminhome .modal-actions button:last-child {
+    background-color: #27ae60;
+    color: white;
+  }
+  
+  .adminhome .modal-actions button:first-child {
+    background-color: #c0392b;
+    color: white;
+  }
+  
+  
+  
