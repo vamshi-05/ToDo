@@ -34,6 +34,7 @@ function Login() {
       // console.log(response)
       if (response.data.status === "success") {
         localStorage.setItem("token",response.data.token)
+        localStorage.setItem("token",response.data.role)
         localStorage.setItem("email",response.data.email)
         localStorage.setItem("username",response.data.username)
         toast.success("Login successful!", {

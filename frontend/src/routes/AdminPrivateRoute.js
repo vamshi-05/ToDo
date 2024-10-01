@@ -5,7 +5,7 @@ function AdminPrivateRoute(){
 
     const role=localStorage.getItem("role")
     if(!role && role!=="admin"){
-        alert("Not Authorized")
+        
         navigate("/login")
         return ;
     }

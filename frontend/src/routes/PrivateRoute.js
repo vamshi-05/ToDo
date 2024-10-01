@@ -6,7 +6,7 @@ function PrivateRoute(){
     const token=localStorage.getItem("token")
     console.log(token)
     if(!token || token===""){
-        alert("Not authorized")
+        
         navigate("/login")
         return ;
     }
