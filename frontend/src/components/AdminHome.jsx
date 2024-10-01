@@ -35,7 +35,7 @@ function AdminHome() {
 
   const fetchTasks = async () => {
     try {
-      const response = await axios.get("http://localhost:4000/admin/tasks", {
+      const response = await axios.get("https://todo-w2j3.onrender.com/admin/tasks", {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -67,7 +67,7 @@ function AdminHome() {
   // Fetch registered users
   const fetchRegisteredUsers = async () => {
     try {
-      const response = await axios.get("http://localhost:4000/admin/users", {
+      const response = await axios.get("https://todo-w2j3.onrender.com/admin/users", {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -87,7 +87,7 @@ function AdminHome() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:4000/admin/addtask",
+        "https://todo-w2j3.onrender.com/admin/addtask",
         newTask,
         {
           headers: {
@@ -122,7 +122,7 @@ function AdminHome() {
   const deleteTask = async (taskId) => {
     try {
       const response = await axios.delete(
-        `http://localhost:4000/admin/${taskId}`,
+        `https://todo-w2j3.onrender.com/admin/${taskId}`,
         {
           headers: {
             "Content-Type": "application/json",

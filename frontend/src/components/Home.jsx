@@ -39,7 +39,7 @@ function Home() {
 
   const fetchTasks = async () => {
     try {
-      const response = await axios.get("http://localhost:4000/user/tasks", {
+      const response = await axios.get("https://todo-w2j3.onrender.com/user/tasks", {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -70,7 +70,7 @@ function Home() {
 
   const fetchRegisteredUsers = async () => {
     try {
-      const response = await axios.get("http://localhost:4000/user/admins", {
+      const response = await axios.get("https://todo-w2j3.onrender.com/user/admins", {
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -90,7 +90,7 @@ function Home() {
     e.preventDefault();
     try {
       const response = await axios.post(
-        "http://localhost:4000/user/addtask",
+        "https://todo-w2j3.onrender.com/user/addtask",
         newTask,
         {
           headers: {
@@ -127,7 +127,7 @@ function Home() {
   const deleteTask = async (taskId) => {
     try {
       const response = await axios.delete(
-        `http://localhost:4000/user/${taskId}`,
+        `https://todo-w2j3.onrender.com/user/${taskId}`,
         {
           headers: {
             "Content-Type": "application/json",
@@ -157,7 +157,7 @@ function Home() {
   const updateTaskStatus = async (taskId, newStatus) => {
     try {
       const response = await axios.put(
-        `http://localhost:4000/user/update/${taskId}`,
+        `https://todo-w2j3.onrender.com/user/update/${taskId}`,
         { status: newStatus },
         {
           headers: {

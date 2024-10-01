@@ -14,7 +14,7 @@ const Summary = ({ isOpen, onClose }) => {
     e.preventDefault();
 
     try {
-      const response = await axios.get("http://localhost:4000/user/summary", {
+      const response = await axios.get("https://todo-w2j3.onrender.com/user/summary", {
         params: {
           status,
           userEmail,
