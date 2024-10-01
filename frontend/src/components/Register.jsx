@@ -5,6 +5,8 @@ import "./styles/register.css";
 import { NavLink, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import validator from "validator"
+
 
 function Register() {
   const [email, setEmail] = useState("");
@@ -19,8 +21,28 @@ function Register() {
   const handleRegister = async (e) => {
     e.preventDefault(); // Prevent the default form submission
 
+    if (validator.isEmpty(username)) {
+      toast.error("Username is required");
+      return;
+    }
+    
+    if (!validator.isEmail(email)) {
+      toast.error("Invalid email address");
+      return;
+    }
+    
+    if (validator.isEmpty(password)) {
+      toast.error("Password is required");
+      return;
+    }
+    
     if (password !== confirmPassword) {
       toast.error("Passwords do not match");
+      return;
+    }
+
+    if (!validator.isMobilePhone(mobileNumber, 'en-IN')) {
+      toast.error("Invalid mobile number");
       return;
     }
 
@@ -33,7 +55,7 @@ function Register() {
         mobileNumber,
       };
 
-      console.log(user);
+    
 
       const response = await axios.post(
         "http://localhost:4000/auth/signup",
@@ -51,7 +73,7 @@ function Register() {
         toast.error(response.data.message);
       }
     } catch (error) {
-      console.error(error);
+      // console.error(error);
       toast.error("Internal Error");
     }
   };

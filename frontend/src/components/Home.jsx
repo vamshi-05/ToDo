@@ -4,6 +4,7 @@ import "./styles/home.css";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Header from "./Header";
+import Summary from "./Summary";
 
 function Home() {
   const [tasks, setTasks] = useState([]);
@@ -19,6 +20,7 @@ function Home() {
     status: "To Do",
   });
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isSummaryModalOpen, setIsSummaryModalOpen] = useState(false); 
 
   // State for pagination
   const [currentPage, setCurrentPage] = useState(1);
@@ -61,7 +63,7 @@ function Home() {
         toast.error(response.data.message);
       }
     } catch (error) {
-      console.error("Failed to fetch tasks", error);
+      // console.error("Failed to fetch tasks", error);
       toast.error(error.message);
     }
   };
@@ -74,11 +76,11 @@ function Home() {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
       });
-      console.log(response.data)
+    
       setRegisteredAdmins(response.data.users);
       
     } catch (error) {
-      console.error("Failed to fetch admins", error);
+      // console.error("Failed to fetch admins", error);
       toast.error("Failed to load registered admins.");
     }
   };
@@ -116,7 +118,7 @@ function Home() {
         toast.error(response.data.message);
       }
     } catch (error) {
-      console.error("Failed to add task", error);
+      // console.error("Failed to add task", error);
       toast.error(error.message);
     }
   };
@@ -141,7 +143,7 @@ function Home() {
         toast.error(response.data.message);
       }
     } catch (error) {
-      console.error("Failed to delete task", error);
+      // console.error("Failed to delete task", error);
       toast.error(error.message);
     }
   };
@@ -172,7 +174,7 @@ function Home() {
         toast.error(response.data.message);
       }
     } catch (error) {
-      console.error("Failed to update task", error);
+      // console.error("Failed to update task", error);
       toast.error(error.message);
     }
   };
@@ -260,9 +262,17 @@ function Home() {
         </div>
 
         {/* Button to open Add Task modal */}
+        <div className="modal-buttons">
         <button className="open-modal-btn" onClick={() => setIsModalOpen(true)}>
           Add Task
         </button>
+        
+        <button className="open-modal-btn" onClick={() => setIsSummaryModalOpen(true)}>
+            Generate Summary
+          </button>
+          </div>
+        
+          <Summary isOpen={isSummaryModalOpen} onClose={() => setIsSummaryModalOpen(false)} />
 
         {/* Modal for adding a task */}
         {isModalOpen && (
@@ -332,18 +342,19 @@ function Home() {
           </div>
         )}
 
+       
         {/* Displaying the tasks */}
-        
+      
         <div className="tasks">
           {currentTasks.map((task) => (
             <div key={task.taskId} className="task">
-              <h3>{task.title}</h3>
+              <h3>{task.title.toUpperCase()}</h3>
               <p>{task.description}</p>
             
-              <p>Due: {formatDate(task.dueDate)}</p>
-              <p>Status: {task.status}</p>
-              <p>Priority: {task.priority}</p>
-              <p>Assigned User: {task.assignedUser}</p>
+              <p>Due : {formatDate(task.dueDate)}</p>
+              <p>Status : {task.status}</p>
+              <p>Priority : {task.priority}</p>
+              <p>Assigned User : {task.assignedUser}</p>
               <div className="task-actions">
                 <button onClick={() => updateTaskStatus(task.taskId, "To Do")}>
                   To Do
@@ -358,7 +369,7 @@ function Home() {
                 >
                   Mark as Completed
                 </button>
-                {console.log(task.assignedUser!=="self")}
+                
                 <button 
                   onClick={() => deleteTask(task.taskId)}
                   disabled={task.assignedUser!=="self"}

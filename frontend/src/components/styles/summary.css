@@ -1,0 +1,100 @@
+/* Modal Overlay */
+.summary .modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+  
+  /* Modal Content */
+  .summary .modal-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 8px;
+    width: 400px; /* Set a fixed width for the modal */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    animation: fadeIn 0.3s ease-in-out;
+  }
+  
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: scale(0.9);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+  
+  /* Form Styles */
+  .summary .modal-content form div {
+    margin-bottom: 1.5rem;
+  }
+  
+  .summary .modal-content label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    text-align: left;
+  }
+  
+  .summary .modal-content input,
+  .summary .modal-content select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+  }
+  
+  .summary .modal-content input[type="date"] {
+    padding: 0.5rem;
+  }
+  
+  /* Modal Actions */
+  .summary .modal-actions {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1.5rem;
+  }
+  
+  .summary .modal-actions button {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  /* Cancel button */
+  .summary .modal-actions button[type="button"] {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  /* Submit button */
+  .summary .modal-actions button[type="submit"] {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  .summary .modal-actions button:hover {
+    opacity: 0.9;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 500px) {
+    .summary .modal-content {
+      width: 90%;
+      padding: 1.5rem;
+    }
+  }
+  

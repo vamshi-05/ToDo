@@ -6,6 +6,7 @@ import axios from "axios";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import "./styles/login.css";
+import validator from "validator"
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -13,14 +14,24 @@ function Login() {
   const navigate = useNavigate();
 
   const handleLogin = async () => {
-   
-    console.log("clicked")
+    
+    if (!validator.isEmail(email)) {
+      toast.error("Invalid email address");
+      return;
+    }
+
+    if (validator.isEmpty(password)) {
+      toast.error("Password cannot be empty");
+      return;
+    }
+
+    // console.log("clicked")
     try {
       const response = await axios.post("http://localhost:4000/auth/login", {
         email,
         password,
       });
-      console.log(response)
+      // console.log(response)
       if (response.data.status === "success") {
         localStorage.setItem("token",response.data.token)
         localStorage.setItem("email",response.data.email)
@@ -86,7 +97,7 @@ function Login() {
                   />
                 </p>
 
-                <p className="btn">
+                <p className="">
                   <button onClick={()=>handleLogin()}>Log In</button>
                 </p>
 

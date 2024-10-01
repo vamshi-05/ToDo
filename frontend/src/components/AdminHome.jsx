@@ -41,9 +41,9 @@ function AdminHome() {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
       });
-      console.log(response)
+       
       if (response.data.status === "success") {
-        console.log("succ")
+       
         const sortedTasks = response.data.tasks.sort((a, b) => {
           const dateA = new Date(a.dueDate);
           const dateB = new Date(b.dueDate);
@@ -53,13 +53,13 @@ function AdminHome() {
           return priorityOrder[a.priority] - priorityOrder[b.priority];
         });
         setTasks(sortedTasks);
-        console.log("tasks")
+    
       } else {
         toast.error(response.data.message);
 
       }
     } catch (error) {
-      console.error("Failed to fetch tasks", error);
+      
       toast.error(error.message);
     }
   };
@@ -73,11 +73,11 @@ function AdminHome() {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },
       });
-      console.log(response.data)
+  
       setRegisteredUsers(response.data.users);
       
     } catch (error) {
-      console.error("Failed to fetch users", error);
+      // console.error("Failed to fetch users", error);
       toast.error("Failed to load registered users.");
     }
   };
@@ -113,7 +113,7 @@ function AdminHome() {
         toast.error(response.data.message);
       }
     } catch (error) {
-      console.error("Failed to add task", error);
+      // console.error("Failed to add task", error);
       toast.error(error.message);
     }
   };
@@ -137,7 +137,7 @@ function AdminHome() {
         toast.error(response.data.message);
       }
     } catch (error) {
-      console.error("Failed to delete task", error);
+      // console.error("Failed to delete task", error);
       toast.error("Failed to delete task");
     }
   };

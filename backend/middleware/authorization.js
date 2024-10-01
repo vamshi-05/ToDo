@@ -8,7 +8,7 @@ const verifyToken = async (req, res, next) => {
             res.json({status : "fail", "message": "Not authorized" })
             return;
         }
-        console.log(secret)
+        
         const token = req.headers.authorization.split(" ")[1]
         jwt.verify(token, secret, (err, data) => {
             if (!err) {
@@ -25,9 +25,9 @@ const verifyToken = async (req, res, next) => {
 }
 
 const isAdmin=(req,res,next)=>{
-    console.log(req.user)
+     
     const role=req.user.role
-    //console.log(role)
+  
     if(role.toLowerCase()==="admin")
         next()
     else
@@ -35,9 +35,9 @@ const isAdmin=(req,res,next)=>{
 }
 
 const isUser=(req,res,next)=>{
-    console.log(req.user)
+ 
     const role=req.user.role
-    //console.log(role)
+    
     if(role.toLowerCase()==="user")
         next()
     else
